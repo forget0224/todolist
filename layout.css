@@ -1,0 +1,17 @@
+
+
+
+
+
+
+body{
+    background: url('/bg.jpg') no-repeat;
+}
+
+.mid{margin: 0 auto;width: 1200px;position: absolute;top:20%;left: 12%; }
+.face{width: 300px;height: 500px;background-color: #00000078;float: left;}
+.mission{width: 800px;height: 500px;background-color: #00000078;float: left;margin-left: 60px;}
+
+
+
+

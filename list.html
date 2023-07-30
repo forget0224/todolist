@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="layout.css"> -->
+
+    <style>
+        * {
+            font-family: "Microsoft Yahei", DejaVu Sans Mono, monospace;
+        }
+
+        body {
+            background: url('./bg.jpg') no-repeat;
+        }
+
+        .title {
+            color: #fff;
+            text-shadow:
+                0 0 7px #ff00cd,
+                0 0 10px #ff69d1,
+                0 0 21px #ff69d1,
+                0 0 42px #ff69d1,
+                0 0 82px #ff69d1,
+                0 0 92px #0fa,
+                0 0 102px #0fa,
+                0 0 151px #0fa;
+            font-size: 48px;
+            width: 400px;
+            margin: 0 auto;
+            margin-bottom: 26px;
+            margin-top: 30px;
+        }
+
+
+        ul {
+            font-size: 25px;
+            width: 665px;
+            margin-left: 40px;
+            margin-top: -23px;
+        }
+
+
+        ol li {
+
+            counter-increment: my-counter;
+
+        }
+
+
+        li {
+            color: white;
+            padding: 20px 0px;
+            list-style: decimal-leading-zero;
+            /* list-style: none; */
+
+        }
+
+        li::marker {
+            color: #ffa4e4;
+            text-shadow:
+                0 0 7px #ff00cd,
+                0 0 10px #ff69d1,
+                0 0 21px #ff69d1;
+            font-size: 21px;
+        }
+
+        a {
+            float: right;
+            text-decoration: none;
+            color: #ffa4e4;
+            text-shadow:
+                0 0 7px #ff00cd,
+                0 0 10px #ff69d1,
+                0 0 21px #ff69d1;
+
+        }
+
+        .span {
+            word-wrap: break-word;
+            max-width: 460px;
+            margin: 0 10px;
+            color: #00efff;
+            text-shadow:
+                0 0 7px #5cf2fc;
+
+        }
+
+        .delete {
+            /* width: 40px; */
+            float: right;
+            margin-top: -24px;
+            font-size: 20px;
+            padding: 0px 6px;
+            border: 2px solid #ff69d1;
+            border-radius: 2px;
+            transform: scale(0.8);
+        }
+
+        .delete:hover {
+            transition: 0.5s;
+            transform: scale(0.9);
+        }
+
+
+        .mid {
+            margin: 0 auto;
+            width: 1200px;
+            position: absolute;
+            /* top: 20%; */
+            left: 12%;
+        }
+
+        .face {
+            width: 300px;
+            height: 350px;
+            background-color: #0f1c21c7;
+            float: left;
+            border: 2px solid #5cf2fc;
+            box-shadow: 0px 0px 9px 2px #64d9e1;
+            background: url('image.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: bottom;
+
+        }
+
+
+
+        .mission {
+            width: 800px;
+            height: 600px;
+            background-color: #0f1c21c7;
+            float: left;
+            margin-left: 40px;
+            border: 2px solid #5cf2fc;
+            box-shadow: 0px 0px 9px 2px #64d9e1;
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+
+        .text {
+            width: 500px;
+            height: 30px;
+            background-color: transparent;
+            border: 2px solid #ff69d1;
+            color: #ff69d1;
+            margin-left: -12px;
+            padding-left: 13px;
+            outline: #ff69d1;
+            letter-spacing: 2px;
+        }
+
+        .text:focus {
+            outline: #ff69d1;
+            box-shadow: 0px 0px 9px 2px #ff69d1;
+        }
+
+        [contenteditable='true']:focus {
+            height: 32px;
+            background: #5cf2fc80;
+            outline: #5cf2fc;
+            border: 0px solid #5cf2fc;
+            box-shadow: 0px 0px 9px 2px #64d9e1;
+            color: #5cf2fc;
+
+
+        }
+
+        .addlist {
+            width: 600px;
+            margin: 20px 50px;
+            margin-top: 21px;
+
+        }
+
+        .send {
+            height: 35px;
+            margin-left: 10px;
+            background-color: transparent;
+            border: 2px solid #ff69d1;
+            color: #ff69d1;
+
+        }
+
+
+
+        .send {
+            background-color: transparent;
+            color: #ffa4e4;
+            text-shadow:
+                0 0 7px #ff00cd,
+                0 0 10px #ff69d1,
+                0 0 21px #ff69d1;
+            transition: 0.3s;
+        }
+
+
+        .send:hover {
+
+            background-color: #ff69d1;
+            border: 2px solid #d04dce;
+            color: #ffffff;
+            transition: 0.3s;
+        }
+
+
+        .mission::-webkit-scrollbar {
+            background: #5cf2fc66;
+        }
+
+        .mission::-webkit-scrollbar-thumb {
+            background: #5cf2fc;
+            box-shadow: 0px 0px 9px 2px #64d9e1;
+
+        }
+    </style>
+
+
+</head>
+
+
+
+<body>
+
+
+    <div class="mid">
+        <div class="title">委託</div>
+
+        <div class="face">
+
+        </div>
+
+
+
+        <div class="mission">
+            <div class="addlist">
+                <input type="text" class="text" placeholder="請輸入">
+                <input type="button" class="send" value="加入">
+            </div>
+            <ul class="list"></ul>
+
+
+
+
+
+        </div>
+    </div>
+
+
+    <script src="jquery-1.7.2.min.js"></script>
+    <script>
+        //指定dom
+        var list = document.querySelector('.list');
+        var sendData = document.querySelector('.send');
+        var data = JSON.parse(localStorage.getItem('listData')) || [];
+        //    ||左邊有資料就轉成陣列 沒資料就轉成空陣列
+
+
+
+
+
+
+
+
+        //3)更新網頁內容
+        function updateList(data) {
+
+            str = '';
+
+            for (var i = 0; i < data.length; i++) {
+                str += '<li><div class="span" contenteditable="true">' + data[i].content +
+                    '</div><div class="delete"><a href="" data-index=' +
+                    i + '>X</a></div></li>'
+
+            }
+            list.innerHTML = str;
+        }
+
+        //1) 點擊加入後 下面列表會新增 ，並同時更新網頁與localstorage
+        function addData(e) {
+            // e.preventDefault();
+            var txt = document.querySelector('.text').value; //撈出文字裡的資料value
+            var todo = {
+                content: txt
+            }
+
+
+            ;
+
+            data.push(todo); //push完進去
+            updateList(data); //要更新一次資料
+            document.querySelector('.text').value = ' ';
+            localStorage.setItem('listData', JSON.stringify(data))
+
+
+        }
+
+
+        //4)按下enter 會add
+        var txt = document.querySelector('.text')
+        txt.addEventListener('keydown', event => {
+            if (event.keyCode === 13 && event.target.value) {
+                addData();
+                event.target.value = ''; //輸出後 清空文字欄
+            } else {
+                return
+            }
+        });
+
+
+
+
+        //2)刪除代辦事項 利用a連結去做
+        function toggleDone(e) {
+            e.preventDefault();
+            if (e.target.nodeName !== 'A') {
+                return
+            };
+            var index = e.target.dataset.index;
+            data.splice(index, 1);
+            updateList(data);
+            localStorage.setItem('listData', JSON.stringify(data));
+
+        }
+
+        // jquery   5) 編輯內容
+        // $(function() {
+
+        //     $('div .span').click(function () {
+
+        //         var td = $(this);
+        //         var text = $(this).text();
+        //         var input = $('<input tupe=text class="edit" value="' + text + '">');
+        //         $(this).html(input);
+
+        //         $('input').click(function () {
+        //             return false;
+        //         });
+        //         $(input).select();
+
+        //         $(input).blur(function () {
+        //             var nextxt = $(this).val();
+        //             td.html(nextxt)
+        //         });
+        //     });
+
+
+
+
+        // -----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+        // 監聽與更新
+
+
+        list.addEventListener("click", toggleDone, false);
+        // list.addEventListener("click", editing, false);
+        sendData.addEventListener("click", addData, false);
+
+
+
+
+
+
+
+
+
+
+
+        //         function editing(e) {
+
+        // alert('hi')
+        // e.preventDefault();
+        // if (e.target.nodeName !== 'P') {
+        //     return
+
+        // } else {
+
+
+        // var newdiv = document.createElement("INPUT")
+        // var oldvalue = e.target.dataset.index.value;
+        // var newvalue = newdiv.value;
+
+        // console.log(e.target);
+
+        // var index = e.target.dataset.index;
+        // data.fill(newvalue, index,index+1);
+        // updateList(data);
+        // localStorage.setItem('listData', JSON.stringify(data));
+
+
+        // edit_input.value = value
+        // var edit_commit = document.createElement('button')
+        //     e.target.parentNode.insertBefore(edit_input,e.target.parentNode.firstChild)
+        //     e.target.setAttribute('class','edit_commit')
+        //     return ;
+
+        //         updateList(data);
+        //         localStorage.setItem('listData', JSON.stringify(data));
+
+        // }
+        // };
+
+
+        //5) 編輯代辦事項 利用span去做
+
+        //   function editing(e){
+        //     e.preventDefault();
+        //     if (e.target.nodeName !== 'DIV') {
+        //             return
+        //         }else{ alert('hi')};
+
+
+        //    ;
+        //   }
+
+
+        // .innerText
+
+
+        // function editedit(e) {
+        //     e.preventDefault();
+        //     if (e.target.nodeName !== 'SPAN') {
+        //         return
+        //     };
+        //     var index = e.target.dataset.index;
+        //     var newdiv = document.createElement("INPUT")
+
+        //     var newvalue = newdiv.value;
+        //     data.fill(newvalue,index, index+1);
+        //     .insertBefore(newvalue,existingItem);
+
+
+
+
+
+        //     updateList(data);
+        //     localStorage.setItem('listData', JSON.stringify(data));
+
+        // }
+
+
+
+
+
+        updateList(data);
+    </script>
+</body>
+
+</html>
